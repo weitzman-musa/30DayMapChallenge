@@ -3,6 +3,8 @@ The collaborative [30-Day Map Challenge](https://30daymapchallenge.com/) entries
 
 ## Participation Instructions
 
+Find some good tips from previous participant [Wanmei Liang](https://www.linkedin.com/pulse/30daymapchallenge-reflection-wanmei-liang/).
+
 0.  **Create a map!**
     
 1.  **Fork this repository**
