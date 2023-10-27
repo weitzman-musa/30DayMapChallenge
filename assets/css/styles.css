@@ -1,0 +1,337 @@
+:root {
+  --spacing: 12px;
+  --wide-spacing: calc((100% - 1024px) / 2);
+
+  --col-count: 1;
+  --col-spacing: var(--spacing);
+  --col-width: calc((100% - (var(--col-count) - 1) * var(--col-spacing)) / var(--col-count));
+
+  --color-accent: #FF4100;
+  --color-highlight: #F5F4F0;
+
+  --header-size: 3.5rem;
+  --header-z-index: 10;
+
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: var(--header-size);
+  background-color: black;
+}
+
+.site-container {
+  /* Setting overflow to auto is used here to contain the margins of child
+   * elements, so that the background color of the container is respected
+   * to the very edges of the child elements.
+   */
+  overflow: auto;
+  background: white;
+}
+
+header, main, footer {
+  padding: 0 var(--spacing);
+  /* Setting overflow to auto is used here to contain the margins of child
+   * elements, so that the background color of the container is respected
+   * to the very edges of the child elements.
+   */
+  overflow: auto;
+}
+
+main {
+  padding-top: var(--spacing);
+  background-color: var(--color-highlight);
+}
+
+footer {
+  padding-top: var(--spacing);
+  padding-bottom: calc(var(--spacing) * 4);
+  background-color: black;
+  color: white;
+}
+
+footer .social-media-label {
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: initial;
+}
+
+footer .social-media a {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 4px;
+  margin-right: 0.25rem;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+/* There may be other h1 elements in the main content, so we need to
+ * distinguish them from the page title.
+ */
+main h1 {
+  border-left: 1px solid var(--color-accent);
+  padding: var(--spacing);
+  margin-left: calc(-1 * var(--spacing));
+  font-size: 2rem;
+}
+
+h2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background-color: black;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  transition: background-color 0.2s ease-in-out,
+              color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--color-accent);
+  color: black;
+}
+
+/* Header mobile menu toggle */
+
+.logo {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - var(--header-size));
+  padding: var(--spacing);
+  box-sizing: border-box;
+  height: var(--header-size);
+  z-index: var(--header-z-index);
+  background-color: white;
+}
+
+.logo img {
+  height: 3rem;
+}
+
+.menu-trigger {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--header-size);
+  height: var(--header-size);
+  border: none;
+  padding: 1.125rem;
+  z-index: calc(var(--header-z-index) + 1);
+  box-sizing: border-box;
+  background-color: var(--color-accent);
+  cursor: pointer;
+  transition: width 0.2s ease-in-out,
+              padding-left 0.2s ease-in-out;
+
+  /* Counterintuitively, this is the transition-delay when transitioning TO
+   * this state.
+   */
+  transition-delay: 0.2s;
+}
+
+.menu-panel-open .menu-trigger {
+  width: 100%;
+  padding-left: calc(100% - var(--header-size) + 1.125rem);
+
+  /* Counterintuitively, this is the transition-delay when transitioning TO
+   * this state.
+   */
+  transition-delay: 0s;
+}
+
+.menu-trigger-bars {
+  position: relative;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.menu-trigger-bars .bar {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.2s ease-in-out,
+              opacity 0.2s ease-in-out,
+              top 0.2s ease-in-out,
+              bottom 0.2s ease-in-out;
+}
+
+.menu-trigger-bars .bar:nth-child(1) {
+  top: 0.125rem;
+}
+.menu-trigger-bars .bar:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menu-trigger-bars .bar:nth-child(3) {
+  bottom: 0.125rem;
+}
+
+.menu-panel-open .menu-trigger-bars .bar:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.menu-panel-open .menu-trigger-bars .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-panel-open .menu-trigger-bars .bar:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+.site-header nav {
+  position: fixed;
+  z-index: var(--header-z-index);
+  left: 0;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: calc(var(--spacing) * 4) var(--spacing);
+  transform: translateY(-100%);
+  background-color: black;
+  transition: transform 0.2s ease-in-out;
+}
+
+.site-header nav a {
+  display: block;
+  margin-bottom: calc(var(--spacing) * 2);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+}
+
+.menu-panel-open nav {
+  transform: translateY(var(--header-size));
+
+  /* Counterintuitively, this is the transition-delay when transitioning TO
+   * this state.
+   */
+  transition-delay: 0.2s;
+}
+
+/* Home page */
+
+.home-main {
+  padding: 1rem 0 2rem 0;
+}
+
+.map-group {
+  vertical-align: text-bottom;
+  line-height: 16rem;
+}
+
+.map-group .day-label {
+  position: absolute;
+  display: inline-block;
+  margin: 0;
+  padding-left: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  box-sizing: border-box;
+}
+
+.map-entry {
+  display: inline-block;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.map-entry .thumbnail {
+  width: 16rem;
+  height: 16rem;
+  object-fit: cover;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+/* Map details */
+
+.map-details .front-matter {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.map-details .creator,
+.map-details .source-link {
+  display: block;
+}
+
+.map-details img {
+  max-width: 100%;
+}
+
+.map-details .default-content {
+  text-align: center;
+}
+
+/*
+  Media breakpoint definitions (borrowed from the Chrome dev tools):
+
+  - small: 425px;
+  - medium: 768px;
+  - large: 1024px;
+*/
+
+@media screen and (min-width: 425px) {
+  :root {
+    --col-count: 2;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --col-count: 3;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  header, main, footer {
+    padding: 0 var(--wide-spacing);
+  }
+}

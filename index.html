@@ -1,0 +1,28 @@
+---
+layout: home
+---
+
+{% assign grouped_maps = site.maps | group_by:"day" %}
+
+{%- for map_group in grouped_maps -%}
+  {%- assign day = map_group.name -%}
+
+  {%- if day != '0' -%}
+    <span class="map-group"><!--
+      --><h2 class="day-label">Day {{ day }}</h2>
+
+      {%- for map in map_group.items -%}
+        {%- assign label = map.title -%}
+
+        <span class="map-entry"><!--
+          --><a href="{{ map.url | relative_url }}"><!--
+            --><img class="thumbnail" src="{{ map.thumbnail | relative_url }}"
+              alt="{{ map.title }} by {{ map.creator }}"
+              title="{{ map.title }} by {{ map.creator }}"><!--
+          --></a><!--
+        --></span>
+      {%- endfor -%}
+
+    </span>
+  {%- endif -%}
+{%- endfor -%}

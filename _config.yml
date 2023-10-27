@@ -1,0 +1,26 @@
+# Build settings
+
+port: 4000
+markdown:  kramdown
+permalink: /:title
+# plugins:   [jekyll-sitemap, jekyll-feed,  jekyll-seo-tag]
+
+# Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
+
+title:		   "MUSA 30 Day Map Challenge"
+description: "Powered by Jekyll and GitHub Pages"
+author:      "Mjumbe Poe"
+
+collections:
+  maps:
+    output: true
+    permalink: /:collection-:title
+    # sort_by: date
+    # sort_reverse: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "maps"
+    values:
+      layout: "map"

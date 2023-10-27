@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<main class="map-details">
+  <div class="front-matter">
+    <span class="creator">Created by {{ page.creator }}</span>
+    {% if page.source %}
+      <a class="source-link" href="{{ page.source }}">Source ↗</a>
+    {% endif %}
+  </div>
+
+  {% assign content = page.content | strip_newlines %}
+  {% if content != "" %}
+    {{ content }}
+  {% else %}
+    <div class="default-content">
+      <img src="{{ page.thumbnail }}" alt="Thumbnail image of {{ page.title }} by {{ page.creator }}">
+    </div>
+  {% endif %}
+</main>

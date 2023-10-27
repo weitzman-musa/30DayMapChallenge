@@ -1,0 +1,33 @@
+<header class="site-header">
+  <div class="logo">
+    <a href="{{ '' | relative_url }}/">
+      {% if site.data.settings.logo %}
+        <img src="{{ site.data.settings.logo | relative_url }}" alt="{{ site.title }}">
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </a>
+  </div>
+
+  <button type="button" id="menubutton" aria-haspopup="true" aria-controls="menu-panel" class="menu-trigger">
+    <span class="visually-hidden">Toggle Menu</span>
+    <div class="menu-trigger-bars" aria-hidden="true">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </button>
+
+  <nav>
+    {% for item in site.data.settings.menu %}
+      <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+    {% endfor %}
+    {% if site.data.settings.resume %}
+      <a href="{{ site.data.settings.resume }}">{{ site.data.settings.resume_link_title }}</a>
+    {% endif %}
+  </nav>
+
+  {% if page.title %}
+    <h1 class="page-title">{{ page.title }}</h1>
+  {% endif %}
+</header>
