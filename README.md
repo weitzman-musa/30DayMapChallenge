@@ -1,11 +1,14 @@
 # 30DayMapChallenge
-The collaborative [30-Day Map Challenge](https://30daymapchallenge.com/) entries from the MUSA program
+The collaborative [30-Day Map Challenge](https://30daymapchallenge.com/) entries from the MUSA program:
 
 > The idea is to create maps based around different themes each day of November using the hashtag #30DayMapChallenge. You can prepare the maps beforehand, but the main idea is to publish maps on the dedicated days.
 
-## Participation Instructions
+At the end of the month, we'll have prizes for the best map, and for the participant who completed the most maps!
 
 Find some good tips from previous participant [Wanmei Liang](https://www.linkedin.com/pulse/30daymapchallenge-reflection-wanmei-liang/).
+
+## Participation Instructions
+
 
 0.  **Create a map!**
 
