@@ -9,13 +9,13 @@ Find some good tips from previous participant [Wanmei Liang](https://www.linkedi
     
 1.  **Fork this repository**
 
-2.  **Create an image from your map**
+2.  **Create a "thumbnail" image from your map**
 
-    This image is going to be your "thumbnail" image, and will be shown in a gallery of all the maps we create for 30 Day Map Challenge. It's going to be square, and about 300 pixels on each side. Your map doesn't have to be a square -- it's just this image that going to be shown in the gallery that will be square. SO, if there's some particular part of your map that you want to showcase in the gallery, make sure to screenshot that part and use it as the thumbnail.
+    Your thumbnail should go in the **[assets/thumbnails](assets/thumbnails/)** folder, and should be a .png, .jpg, .gif, or .webp file. It should include the 2-digit day of your map, and your name in the title. For example, if I were submitting a map for November 2, I might create a file named **assets/thumbnails/02-mjumbe-poe.gif**.
 
     > Note that if your image is larger than 300x300, it will be scaled down, and if it is not a square, then only the middle part of the image will be visible (i.e. if it's a tall image, the top and bottom will be cropped; if it's a wide image, the left and rght will be cropped). I recommend creating an image around 600 pixels on each side.
 
-    Your thumbnail should go in the [assets/thumbnails](assets/thumbnails/) folder, and should be a .png, .jpg, .gif, or .webp file. It should include the 2-digit day of your map, and your name in the title. For example, if I were submitting a map for November 2, I might create a file named **assets/thumbnails/02-mjumbe-poe.gif**.
+    This image will be shown in a gallery of all the maps we create for 30 Day Map Challenge. It's going to be square, and about 300 pixels on each side. Your map doesn't have to be a square -- it's just this image that going to be shown in the gallery that will be square. SO, if there's some particular part of your map that you want to showcase in the gallery, make sure to screenshot that part and use it as the thumbnail.
 
 3.  **Create a new entry in the [_maps](_maps/) folder**
 
