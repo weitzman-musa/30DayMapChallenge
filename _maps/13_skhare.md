@@ -1,5 +1,5 @@
 ---
-day: 1
+day: 13
 creator: Samriddhi Khare
 title: Chloropleth
 thumbnail: /assets/thumbnails/13_skhare.png
