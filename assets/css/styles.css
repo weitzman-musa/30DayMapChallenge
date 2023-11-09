@@ -2,9 +2,13 @@
   --spacing: 12px;
   --wide-spacing: calc((100% - 1024px) / 2);
 
-  --col-count: 1;
+  --col-count: 2;
   --col-spacing: var(--spacing);
-  --col-width: calc((100% - (var(--col-count) - 1) * var(--col-spacing)) / var(--col-count));
+  --col-width: calc((100vw - (var(--col-count) + 1) * var(--col-spacing)) / var(--col-count) - 1px);
+
+  --thumbnail-size: var(--col-width);
+  --thumbnail-spacing: var(--col-spacing);
+  --thumbnail-transition: 0.3s;
 
   --color-accent: #FF4100;
   --color-highlight: #F5F4F0;
@@ -44,7 +48,7 @@ header, main, footer {
 
 main {
   padding-top: var(--spacing);
-  background-color: var(--color-highlight);
+  background-color: white;
 }
 
 footer {
@@ -259,34 +263,46 @@ h2 {
 }
 
 .map-group {
-  vertical-align: text-bottom;
-  line-height: 16rem;
+  background-color: var(--color-highlight);
+  transition: border-width var(--thumbnail-transition),
+              border-color var(--thumbnail-transition),
+              background-color var(--thumbnail-transition),
+              color var(--thumbnail-transition);
 }
 
 .map-group .day-label {
-  position: absolute;
+  position: relative;
   display: inline-block;
-  margin: 0;
-  padding-left: 2rem;
-  text-align: center;
-  line-height: 2rem;
-  box-sizing: border-box;
+  margin: 0 calc(var(--thumbnail-spacing) / 2);
+  padding: 0.75rem 0 0.25rem;
+  width: var(--thumbnail-size);
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: left;
+}
+
+.day-label + .map-entry {
+  margin-left: calc(-1 * var(--thumbnail-size) - var(--thumbnail-spacing) / 2);
 }
 
 .map-entry {
   display: inline-block;
-  margin-left: 2rem;
-  margin-top: 2rem;
+  margin: 2rem calc(var(--thumbnail-spacing) / 2) 0;
+  vertical-align: top;
 }
 
 .map-entry .thumbnail {
-  width: 16rem;
-  height: 16rem;
+  width: var(--thumbnail-size);
+  height: var(--thumbnail-size);
   object-fit: cover;
   border: 1px solid black;
   border-radius: 5px;
   box-sizing: border-box;
   vertical-align: middle;
+  transition: border-width var(--thumbnail-transition),
+              border-color var(--thumbnail-transition),
+              box-shadow var(--thumbnail-transition),
+              filter var(--thumbnail-transition);
 }
 
 /* Map details */
@@ -317,21 +333,58 @@ h2 {
   - large: 1024px;
 */
 
-@media screen and (min-width: 425px) {
-  :root {
-    --col-count: 2;
-  }
-}
-
-@media screen and (min-width: 768px) {
+@media screen and (width > 425px) {
   :root {
     --col-count: 3;
   }
+}
+
+@media screen and (width > 768px) {
+  :root {
+    --col-count: 4;
+  }
 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (width > 1024px) {
+  :root {
+    --col-count: 5;
+  }
+
   header, main, footer {
     padding: 0 var(--wide-spacing);
+  }
+}
+
+@media (hover: hover) {
+  /* Hovering over any part of a day highlights the whole day. */
+
+  .map-group:hover {
+    background-color: black;
+    color: white;
+  }
+
+  /* Thumbnails start off as grayscale, but all of a day's thumbnails get
+  colored in when you hover over the day. */
+
+  .map-entry .thumbnail {
+    filter: grayscale();
+    border-color: var(--color-highlight);
+
+    transition: border-width var(--thumbnail-transition),
+                border-color var(--thumbnail-transition),
+                box-shadow var(--thumbnail-transition),
+                filter var(--thumbnail-transition);
+  }
+
+  .map-group:hover .thumbnail {
+    filter: none;
+    border-color: black;
+  }
+
+  .map-entry .thumbnail:hover {
+    border-width: 3px;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 5px black;
   }
 }
