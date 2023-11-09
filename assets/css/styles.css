@@ -1,10 +1,10 @@
 :root {
   --spacing: 12px;
-  --wide-spacing: calc((100% - 1024px) / 2);
+  --base-width: 100vw;
 
   --col-count: 2;
   --col-spacing: var(--spacing);
-  --col-width: calc((100vw - (var(--col-count) + 1) * var(--col-spacing)) / var(--col-count) - 1px);
+  --col-width: calc((var(--base-width) - (var(--col-count) + 1) * var(--col-spacing)) / var(--col-count) - 1px);
 
   --thumbnail-size: var(--col-width);
   --thumbnail-spacing: var(--col-spacing);
@@ -260,6 +260,8 @@ h2 {
 
 .home-main {
   padding: 1rem 0 2rem 0;
+  width: var(--base-width);
+  margin: auto;
 }
 
 .map-group {
@@ -349,6 +351,8 @@ h2 {
 @media screen and (width > 1024px) {
   :root {
     --col-count: 5;
+    --base-width: 1024px;
+    --wide-spacing: calc((100vw - 1024px) / 2);
   }
 
   header, main, footer {
