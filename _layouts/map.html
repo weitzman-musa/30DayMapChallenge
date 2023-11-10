@@ -15,7 +15,7 @@ layout: default
     {{ content }}
   {% else %}
     <div class="default-content">
-      <img src="{{ page.thumbnail }}" alt="Thumbnail image of {{ page.title }} by {{ page.creator }}">
+      <img src="{{ page.thumbnail | relative_url }}" alt="Thumbnail image of {{ page.title }} by {{ page.creator }}">
     </div>
   {% endif %}
 </main>
