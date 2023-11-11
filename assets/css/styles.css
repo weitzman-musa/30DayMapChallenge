@@ -77,7 +77,7 @@ footer .social-media a {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 300;
 }
 
@@ -264,6 +264,10 @@ h2 {
   margin: auto;
 }
 
+.home-main p {
+  margin: var(--spacing);
+}
+
 .map-group {
   background-color: var(--color-highlight);
   transition: border-width var(--thumbnail-transition),
@@ -346,6 +350,9 @@ h2 {
     --col-count: 4;
   }
 
+  h1 {
+    font-size: 4rem;
+  }
 }
 
 @media screen and (width > 1024px) {
