@@ -1,7 +1,7 @@
 ---
-day: 2
+day: 24
 creator: Samriddhi Khare
-title: Lines
-thumbnail: /assets/thumbnails/2_skhare.png
+title: Black and White
+thumbnail: /assets/thumbnails/27_skhare.png
 source: https://github.com/samriddhikhar3/30daymapchallenge_source
 ---
