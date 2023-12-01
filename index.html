@@ -14,7 +14,7 @@ Design</p>
 
   {%- if day != '0' -%}
     <span class="map-group"><!--
-      --><h2 class="day-label">Day {{ day }}</h2>
+      --><h2 class="day-label">{{ day }} - {{ site.data.settings.day_categories[day] }}</h2>
 
       {%- for map in map_group.items -%}
         {%- assign label = map.title -%}
