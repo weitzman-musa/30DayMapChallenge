@@ -7,27 +7,4 @@ title: 30-Day Map Challenge
 Analytics program at the University of Pennsylvania's Weitzman School of
 Design</p>
 
-{% assign grouped_maps = site.maps | group_by:"day" %}
-
-{%- for map_group in grouped_maps -%}
-  {%- assign day = map_group.name -%}
-
-  {%- if day != '0' -%}
-    <span class="map-group"><!--
-      --><h2 class="day-label">{{ day }} - {{ site.data.settings.day_categories[day] }}</h2>
-
-      {%- for map in map_group.items -%}
-        {%- assign label = map.title -%}
-
-        <span class="map-entry"><!--
-          --><a href="{{ map.url | relative_url }}"><!--
-            --><img class="thumbnail" src="{{ map.thumbnail | relative_url }}"
-              alt="{{ map.title }} by {{ map.creator }}"
-              title="{{ map.title }} by {{ map.creator }}"><!--
-          --></a><!--
-        --></span>
-      {%- endfor -%}
-
-    </span>
-  {%- endif -%}
-{%- endfor -%}
+{% include thumbnail_grid.html maps=site.maps_2023 %}

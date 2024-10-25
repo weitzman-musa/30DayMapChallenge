@@ -12,15 +12,15 @@ description: "Powered by Jekyll and GitHub Pages"
 author:      "Mjumbe Poe"
 
 collections:
-  maps:
+  maps_2023:
+    output: true
+    permalink: /maps-:title
+  maps_2024:
     output: true
     permalink: /:collection-:title
-    # sort_by: date
-    # sort_reverse: true
 
 defaults:
-  - scope:
-      path: ""
-      type: "maps"
-    values:
-      layout: "map"
+  - scope: { type: "maps_2023", path: "" }
+    values: { layout: "map" }
+  - scope: { type: "maps_2024", path: "" }
+    values: { layout: "map" }
