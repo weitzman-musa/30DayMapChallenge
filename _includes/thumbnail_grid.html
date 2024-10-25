@@ -12,7 +12,7 @@
 
         <span class="map-entry"><!--
           --><a href="{{ map.url | relative_url }}"><!--
-            --><img class="thumbnail" src="{{ map.thumbnail | relative_url }}"
+            --><img class="thumbnail" src="{{ map.thumbnail | replace: "thumbnail", "scaled_thumbnail" | relative_url }}"
               alt="{{ map.title }} by {{ map.creator }}"
               title="{{ map.title }} by {{ map.creator }}"><!--
           --></a><!--
