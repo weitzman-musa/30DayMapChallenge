@@ -39,6 +39,10 @@ jobs:
           ruby-version: '3.2.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 1 # Increment this number if you need to re-download cached gems
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: libpng-dev libjpeg-dev libtiff-dev imagemagick
+          version: 1.0
       - name: Pre-process Assets
         run: scripts/resize_thumbnails.sh
       - name: Setup Pages
