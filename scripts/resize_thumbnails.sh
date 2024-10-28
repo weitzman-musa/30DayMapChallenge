@@ -1,3 +1,5 @@
+#!/bin/env bash
+
 # Use the `convert` tool to resize all images in the `assets/thumbnails`
 # directory (including subdirectories) to 320 pixels on the small edge.
 #
