@@ -50,10 +50,7 @@ jobs:
           cache-version: 1 # Increment this number if you need to re-download cached gems
 
       - name: Install ImageMagick
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: libpng-dev libjpeg-dev libtiff-dev imagemagick
-          version: 1.0
+        run: sudo apt update && sudo apt install libpng-dev libjpeg-dev libtiff-dev imagemagick
 
       - name: Pre-process Assets
         run: scripts/resize_thumbnails.sh
