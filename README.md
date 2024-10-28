@@ -18,6 +18,9 @@ Find some good tips from previous participant [Wanmei Liang](https://www.linkedi
     
 1.  **Fork this repository**
 
+    Note: If you have forked the repository in a previous year, you should be able to reuse the same repository; make sure to sync the latest changes into your fork:
+    ![Sync your fork by cliking the "Sync fork" and then "Update branch" buttons](assets/img/update-fork.jpg)
+
 2.  **Create a "thumbnail" image from your map**
 
     Your thumbnail should go in the **[assets/thumbnails](assets/thumbnails/)** folder for the current year, and should be a .png, .jpg, .gif, or .webp file. It should include the 2-digit day of your map, and your name in the title. For example, if I were submitting a map for November 2 in 2024, I might create a file named **assets/thumbnails/2024/02-mjumbe-poe.gif**.
