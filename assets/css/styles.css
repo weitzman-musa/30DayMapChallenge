@@ -91,18 +91,6 @@ main h1 {
   font-size: 2rem;
 }
 
-h2 {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-}
-
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -268,7 +256,14 @@ h2 {
   margin: var(--spacing);
 }
 
+.maps-year > header {
+  margin-top: calc(2 * var(--spacing));
+  padding: 0;
+  font-size: 2rem;
+}
+
 .map-group {
+  display: inline;
   background-color: var(--color-highlight);
   transition: border-width var(--thumbnail-transition),
               border-color var(--thumbnail-transition),
@@ -277,11 +272,16 @@ h2 {
 }
 
 .map-group .day-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+
   position: relative;
   display: inline-block;
   margin: 0 calc(var(--thumbnail-spacing) / 2);
   padding: 0.75rem 0 0.25rem;
   width: var(--thumbnail-size);
+  overflow: visible;
   font-size: 1rem;
   line-height: 1rem;
   text-align: left;
