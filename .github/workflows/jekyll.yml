@@ -33,17 +33,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.197.0
-        with:
-          ruby-version: '3.2.3' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 1 # Increment this number if you need to re-download cached gems
-      - name: Install ImageMagick
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: libpng-dev libjpeg-dev libtiff-dev imagemagick
-          version: 1.0
+
       - name: Cache Scaled Thumbnail Images
         uses: actions/cache@v3
         env:
@@ -51,8 +41,23 @@ jobs:
         with:
           path: assets/scaled_thumbnails
           key: ${{ runner.os }}-thumbnails-${{ env.cache-version }}-${{ hashFiles('assets/thumbnails/**/*') }}
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.197.0
+        with:
+          ruby-version: '3.2.3' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 1 # Increment this number if you need to re-download cached gems
+
+      - name: Install ImageMagick
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: libpng-dev libjpeg-dev libtiff-dev imagemagick
+          version: 1.0
+
       - name: Pre-process Assets
         run: scripts/resize_thumbnails.sh
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
