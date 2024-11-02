@@ -1,5 +1,5 @@
 ---
-day: 0
+day: 1
 creator: Jingmiao Fei
 title: Population Distribution of Philadelphia
 thumbnail: /assets/thumbnails/2024/01-Jingmiao-Points.png
