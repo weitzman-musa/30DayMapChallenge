@@ -10,4 +10,4 @@ In Singapore, public housing is so iconic, even [the queen](https://www.straitst
 
 It is reassuring that Singapore maintains the separation of public / private housing markets, with careful restrictions on foreign investment. Without such a system, our dear friends at the nearby Huntsman Hall would have realised tremendous gains from transacting land and properties in Singapore.
 
-![Screenshot of map](assets/thumbnails/2024/04-Byron-Hexagons.png
+![Screenshot of map](assets/thumbnails/2024/04-Byron-Hexagons.png)

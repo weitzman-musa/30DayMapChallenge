@@ -10,4 +10,4 @@ This was a difficult map to create, particularly more effort is needed to even a
 
 It is a pity that these services were withdrawn some time before the Second World War. Would trams make a comeback in Singapore? Praying hard they would...
 
-![Screenshot of map](assets/thumbnails/2024/07-Byron-Vintage.png
+![Screenshot of map](assets/thumbnails/2024/07-Byron-Vintage.png)
