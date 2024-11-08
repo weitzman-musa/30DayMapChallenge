@@ -3,3 +3,9 @@ _site/
 
 assets/scaled_thumbnails/
 .Rproj.user
+.RData
+.Rhistory
+*.Rproj
+
+rosm.cache/
+sources/
