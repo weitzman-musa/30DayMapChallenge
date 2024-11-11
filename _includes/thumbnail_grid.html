@@ -1,11 +1,12 @@
 {% assign grouped_maps = include.maps | group_by:"day" %}
+{% assign year = include.year %}
 
 {%- for map_group in grouped_maps -%}
   {%- assign day = map_group.name -%}
 
   {%- if day != '0' -%}
     <section class="map-group"><!--
-      --><header class="day-label">{{ day }} - {{ site.data.settings.day_categories[day] }}</header>
+      --><header class="day-label">{{ day }} - {{ site.data.settings.day_categories[year][day] }}</header>
 
       {%- for map in map_group.items -%}
         {%- assign label = map.title -%}
