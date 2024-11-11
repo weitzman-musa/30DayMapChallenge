@@ -7,4 +7,4 @@ source: https://github.com/yjmark/30DayMapChallenge_2024_Jun/blob/main/Day14_UPU
 ---
 
 Not all countries use street names in their addressing systems. Some countries have street names for every road and use them in addresses, while others have few or no street names and rely instead on such as area codes, PO box numbers, or digital geocoding services like what3words.
-![Screenshot of interactive map](assets/thumbnails/14-youngsang-jun.jpg)
+![Screenshot of interactive map](assets/thumbnails/2024/14-youngsang-jun.jpg)
