@@ -6,33 +6,33 @@ day_categories:
     '1': Points
     '2': Lines
     '3': Polygons
-    '4': A bad map
-    '5': Analog Map
-    '6': Asia
-    '7': Navigation
-    '8': Africa
-    '9': Hexagons
-    '10': North America
-    '11': Retro
-    '12': South America
-    '13': Choropleth
-    '14': Europe
-    '15': OpenStreetMap
-    '16': Oceania
-    '17': Flow
-    '18': Atmosphere
-    '19': 5-minute map
-    '20': Outdoors
-    '21': Raster
-    '22': North is not always up
-    '23': 3D
-    '24': Black & white
-    '25': Antarctica
-    '26': Minimal
-    '27': Dot
-    '28': Is this a chart or a map?
-    '29': Population
-    '30': My favorite...
+    '4': Hexagons
+    '5': A journey
+    '6': Raster
+    '7': Vintage style
+    '8': Humanitarian Data Exchange (HDX)
+    '9': AI only
+    '10': Pen & paper
+    '11': Arctic
+    '12': Time and space
+    '13': A new tool
+    '14': A world map
+    '15': My data
+    '16': Choropleth
+    '17': Collaborative map
+    '18': 3D
+    '19': Typography
+    '20': OpenStreetMap
+    '21': Conflict
+    '22': 2 colours
+    '23': Memory
+    '24': Only circular shapes
+    '25': Heat
+    '26': Map projections
+    '27': Micromapping
+    '28': The blue planet
+    '29': Overture
+    '30': The final map
   '2023':
     '1': Points
     '2': Lines
