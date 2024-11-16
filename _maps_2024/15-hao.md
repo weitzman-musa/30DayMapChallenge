@@ -1,13 +1,8 @@
 ---
-day: 0
-creator: Your Name Here
-title: Give your map a title (optional)
-thumbnail: /assets/thumbnails/2024/00-template.png
-source: https://...  # Add a link to your source code here
+day: 15
+creator: Hao Zhu
+title: Exploring Washington, DC: Places I Visited on Oct. 03-04 During Fall Break
+thumbnail: /assets/thumbnails/2024/15-Hao-DataMyData.png
+interactive map link : /assets/thumbnails/2024/15-Hao-DataMyData.html
+source: https://github.com/haoz51/30DayMapChallenge2024_HZ/blob/main/15-Data%20My%20data/15-DataMyData.R 
 ---
-
-By default, your thumnail will be displayed here. If that's good enough, cool, just delete all of this text below the front matter.
-
-But if you want to give any context for your map, feel free to all the **power** of [markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) to do so here. If you do, just make sure to also include some image(s) of your project, e.g.:
-
-![Screenshot of interactive map](assets/thumbnails/00-template.png)
