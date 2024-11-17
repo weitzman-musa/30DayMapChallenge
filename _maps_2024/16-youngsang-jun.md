@@ -7,5 +7,5 @@ source: https://github.com/yjmark/30DayMapChallenge_2024_Jun/blob/main/Day16_ACS
 ---
 
 How is the relationship between commute time and household income distributed spatially? Today's map examines cases in Philadelphia, Washington D.C., and Boston.
-![Screenshot of interactive map](assets/thumbnails/2024/16-youngsang-jun.jpg)
+![Screenshot of interactive map](assets/thumbnails/2024/16-youngsang-jun.png)
 
