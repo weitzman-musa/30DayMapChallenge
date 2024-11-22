@@ -1,5 +1,5 @@
 ---
-day: 6
+day: 17
 creator: Byron Huang and Sean Koh
 title: Cuisine Collaboration — How food can bring two cities across the world together
 thumbnail: /assets/thumbnails/2024/17-Sean-Byron-Collab.png
