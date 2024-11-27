@@ -1,0 +1,783 @@
+---
+title: "test_historic_map"
+output: html_document
+date: "2024-11-21"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+###################### Libraries 
+
+library(sf)
+library(tigris)
+library(tidycensus)
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(ggtext)
+library(glue)
+library(magick)
+library(ggpubr)
+library(terra)
+library(ggplot2)
+library(ggspatial)
+library(ggshadow)
+library(grid)
+library(extrafont)
+library(ggimage)
+
+```
+
+```{r}
+
+######################
+
+setwd("/Users/emmawit/Downloads")
+
+tidycensus::census_api_key("2303009ddac130ce0b80796be79521a5421131c9", overwrite = TRUE)
+
+######################
+
+us <- get_acs(
+  geography = "state", 
+  year = 2022,
+  variables = "B01003_001E",
+  geometry = TRUE,
+  progress = FALSE
+)
+
+us <- st_transform(us, crs = 'EPSG:5070')
+cont_us <- us %>% filter(NAME != 'Alaska' & NAME != 'Hawaii' & NAME != 'Puerto Rico')
+
+```
+
+```{r echo=TRUE, fig.height=13, fig.width=10, message=FALSE, warning=FALSE, cache=FALSE}
+
+###################### Boundary of States
+us2 <- get_acs(
+  geography = "state", 
+  year = 2022,
+  variables = "B01003_001E",
+  geometry = TRUE,
+  progress = FALSE
+)
+
+cont_us2 <- us2 %>% filter(NAME != 'Alaska' & NAME != 'Hawaii' & NAME != 'Puerto Rico')
+
+
+#General US Boundary
+us_boundary <- st_read("gz_2010_us_outline_20m.json")
+us_boundary <- st_transform(us_boundary, crs = 'EPSG:5070')
+us_boundary <- us_boundary %>% filter(R_STATEFP != '02' & R_STATEFP != '15' & R_STATEFP != '72')
+
+all_countries <- st_read("World_Countries_(Generalized)_9029012925078512962.geojson")
+all_countries <- st_transform(all_countries, crs = 'EPSG:5070')
+all_countries <- all_countries %>%
+  filter(COUNTRY %in% c('Canada', 'United States', 'Mexico', 'Cuba', 'Bahamas', 'Haiti'))
+
+#Vintage Paper-Look
+vintage_map <- image_read("wooden-floor-background.jpg")
+#Vintage Grid-Look
+vintage_grid <- image_read("graph-paper.png")
+
+
+#vintage_mapFULL_transparent <- image_colorize(vintage_map, opacity = 75, color = "#d1bfa3")
+vintage_map_transparent <- image_colorize(vintage_map, opacity = 75, color = "#d0c0a9") 
+vintage_map_transparent2 <- image_colorize(vintage_map, opacity = 99, color = "#d0c0a9") 
+vintage_grid_transparent <- image_colorize(vintage_grid, opacity = 95, color = "#c9b598")
+
+###################### Bison Images
+
+#Bison Image (1)
+bison_df <- data.frame(
+  x = -96,  
+  y = 41,   
+  image = "35434.png"  
+)
+
+bison_sf <- st_as_sf(bison_df, coords = c("x", "y"), crs = 4326)  
+
+bison_transformed <- st_transform(bison_sf, crs = 5070)
+
+bison_transformed_coords <- as.data.frame(st_coordinates(bison_transformed))
+bison_df$x <- bison_transformed_coords$X
+bison_df$y <- bison_transformed_coords$Y
+
+
+#Bison Image (2)
+bison_df2 <- data.frame(
+  x = -98.2,  
+  y = 30.7,  
+  image = "bison2.png"  
+)
+
+bison_sf2 <- st_as_sf(bison_df2, coords = c("x", "y"), crs = 4326)  
+
+bison_transformed2 <- st_transform(bison_sf2, crs = 5070)
+
+bison_transformed_coords2 <- as.data.frame(st_coordinates(bison_transformed2))
+bison_df2$x <- bison_transformed_coords2$X
+bison_df2$y <- bison_transformed_coords2$Y
+
+
+
+#Bison Image (2.3)
+bison_df23 <- data.frame(
+  x = -97.98,  
+  y = 38.248,  
+  image = "bison2.png"  
+)
+
+bison_sf23 <- st_as_sf(bison_df23, coords = c("x", "y"), crs = 4326)  
+
+bison_transformed23 <- st_transform(bison_sf23, crs = 5070)
+
+bison_transformed_coords23 <- as.data.frame(st_coordinates(bison_transformed23))
+bison_df23$x <- bison_transformed_coords23$X
+bison_df23$y <- bison_transformed_coords23$Y
+
+
+
+#Bison Image (2.2)
+bison_df22 <- data.frame(
+  x = -104.9,  
+  y = 35.66,  
+  image = "bison2_2.png"  
+)
+
+bison_sf22 <- st_as_sf(bison_df22, coords = c("x", "y"), crs = 4326)  
+
+bison_transformed22 <- st_transform(bison_sf22, crs = 5070)
+
+bison_transformed_coords22 <- as.data.frame(st_coordinates(bison_transformed22))
+bison_df22$x <- bison_transformed_coords22$X
+bison_df22$y <- bison_transformed_coords22$Y
+
+
+#Bison Image (2.21)
+bison_df221 <- data.frame(
+  x = -109.700,  
+  y = 45.700,  
+  image = "bison2_2.png"  
+)
+
+bison_sf221 <- st_as_sf(bison_df221, coords = c("x", "y"), crs = 4326)  
+
+bison_transformed221 <- st_transform(bison_sf221, crs = 5070)
+
+bison_transformed_coords221 <- as.data.frame(st_coordinates(bison_transformed221))
+bison_df221$x <- bison_transformed_coords221$X
+bison_df221$y <- bison_transformed_coords221$Y
+
+
+#Bison Image (3)
+bison_df3 <- data.frame(
+  x = -97.59,  
+  y = 47.047,  
+  image = "bison3.png"  
+)
+
+bison_sf3 <- st_as_sf(bison_df3, coords = c("x", "y"), crs = 4326)  
+
+bison_transformed3 <- st_transform(bison_sf3, crs = 5070)
+
+bison_transformed_coords3 <- as.data.frame(st_coordinates(bison_transformed3))
+bison_df3$x <- bison_transformed_coords3$X
+bison_df3$y <- bison_transformed_coords3$Y
+
+
+#Bison Image (3.1)
+bison_df31 <- data.frame(
+  x = -93.85,  
+  y = 35.889,  
+  image = "bison3.png"  
+)
+
+bison_sf31 <- st_as_sf(bison_df31, coords = c("x", "y"), crs = 4326)  
+
+bison_transformed31 <- st_transform(bison_sf31, crs = 5070)
+
+bison_transformed_coords31 <- as.data.frame(st_coordinates(bison_transformed31))
+bison_df31$x <- bison_transformed_coords31$X
+bison_df31$y <- bison_transformed_coords31$Y
+
+
+#Bison Image (4)
+bison_df4 <- data.frame(
+  x = -104.958,  
+  y = 41.50,  
+  image = "bison3.png"  
+)
+
+bison_sf4 <- st_as_sf(bison_df4, coords = c("x", "y"), crs = 4326)  
+
+bison_transformed4 <- st_transform(bison_sf4, crs = 5070)
+
+bison_transformed_coords4 <- as.data.frame(st_coordinates(bison_transformed4))
+bison_df4$x <- bison_transformed_coords4$X
+bison_df4$y <- bison_transformed_coords4$Y
+
+
+#Bison Image (5)
+bison_df5 <- data.frame(
+  x = -90.229,  
+  y = 40.787,  
+  image = "bison3 copy.png"  
+)
+
+bison_sf5 <- st_as_sf(bison_df5, coords = c("x", "y"), crs = 4326)  
+
+bison_transformed5 <- st_transform(bison_sf5, crs = 5070)
+
+bison_transformed_coords5 <- as.data.frame(st_coordinates(bison_transformed5))
+bison_df5$x <- bison_transformed_coords5$X
+bison_df5$y <- bison_transformed_coords5$Y
+
+###################### Legend & Other
+
+#Legend 1
+legend1 <- data.frame(
+  x = -93.03,  
+  y = 23.85,  
+  image = "test1.png"  
+)
+
+legend1_sf <- st_as_sf(legend1, coords = c("x", "y"), crs = 4326)  
+
+legend1_transformed <- st_transform(legend1_sf, crs = 5070)
+
+legend1_transformed_coords <- as.data.frame(st_coordinates(legend1_transformed))
+legend1$x <- legend1_transformed_coords$X
+legend1$y <- legend1_transformed_coords$Y
+
+
+
+
+#Legend 2
+legend2 <- data.frame(
+  x = -93,  
+  y = 25,  
+  image = "Layer 5.png"  
+)
+
+legend2_sf <- st_as_sf(legend2, coords = c("x", "y"), crs = 4326)  
+
+legend2_transformed <- st_transform(legend2_sf, crs = 5070)
+
+legend2_transformed_coords <- as.data.frame(st_coordinates(legend2_transformed))
+legend2$x <- legend2_transformed_coords$X
+legend2$y <- legend2_transformed_coords$Y
+
+
+
+
+#Brown Background
+bb_img <- data.frame(
+  x = -78.5,                
+  y = 49.5,  
+  image = "brown_background.png"  
+)
+
+bb_img_sf <- st_as_sf(bb_img, coords = c("x", "y"), crs = 4326)  
+
+bb_img_transformed <- st_transform(bb_img_sf, crs = 5070)
+
+bb_img_transformed_coords <- as.data.frame(st_coordinates(bb_img_transformed))
+bb_img$x <- bb_img_transformed_coords$X
+bb_img$y <- bb_img_transformed_coords$Y
+
+
+###################### Hillshade
+
+#Hillshade
+raster_data <- rast("SR_50M.tif")
+raster_crs <- crs(raster_data, proj = TRUE) 
+us2_transformed <- st_transform(cont_us2, crs = raster_crs)
+
+raster_clipped <- crop(raster_data, ext(us2_transformed))      
+raster_clipped <- mask(raster_clipped, vect(us2_transformed)) 
+
+target_crs <- "EPSG:5070"
+raster_projected <- project(raster_clipped, target_crs)    
+raster_projected_not_clipped <- project(raster_data, target_crs)  
+
+raster_projected_not_clipped <- crop(raster_projected_not_clipped, ext(all_countries))      
+raster_projected_not_clipped <- mask(raster_projected_not_clipped, vect(all_countries)) 
+
+raster_df <- as.data.frame(raster_projected, xy = TRUE)
+raster_FULL_df <- as.data.frame(raster_data, xy=TRUE)
+FULL_raster_df <- as.data.frame(raster_projected_not_clipped, xy = TRUE)
+
+us2_merged <- us2_transformed %>%
+  st_union()
+
+us2_merged_sf <- st_sfc(us2_merged, crs = st_crs(us2_transformed))
+
+###################### Extra Text
+
+#Text for map
+annotation_df1 <- data.frame(
+  label = "Bison Range",   
+  x = -78.5,                
+  y = 49.5,                  
+  family = "Apple Chancery"     
+)
+annotation_sf1 <- st_as_sf(annotation_df1, coords = c("x", "y"), crs = 4326)  # WGS84 (EPSG:4326)
+
+annotation1_transformed <- st_transform(annotation_sf1, crs = 5070)
+
+annotation1_transformed_coords <- as.data.frame(st_coordinates(annotation1_transformed))
+annotation_df1$x <- annotation1_transformed_coords$X
+annotation_df1$y <- annotation1_transformed_coords$Y
+
+
+
+annotation_df2 <- data.frame(
+  label = "A Map of the",   
+  x = -78.5,                
+  y = 50.65,                 
+  family = "Snell Roundhand"     
+)
+annotation_sf2 <- st_as_sf(annotation_df2, coords = c("x", "y"), crs = 4326)  # WGS84 (EPSG:4326)
+
+annotation2_transformed <- st_transform(annotation_sf2, crs = 5070)
+
+annotation2_transformed_coords <- as.data.frame(st_coordinates(annotation2_transformed))
+annotation_df2$x <- annotation2_transformed_coords$X
+annotation_df2$y <- annotation2_transformed_coords$Y
+
+
+
+annotation_df3 <- data.frame(
+  label = "1800 - 1875",   
+  x = -79.3,                
+  y = 48.25,                 
+  family = "Snell Roundhand"     
+)
+annotation_sf3 <- st_as_sf(annotation_df3, coords = c("x", "y"), crs = 4326)  # WGS84 (EPSG:4326)
+
+annotation3_transformed <- st_transform(annotation_sf3, crs = 5070)
+
+annotation3_transformed_coords <- as.data.frame(st_coordinates(annotation3_transformed))
+annotation_df3$x <- annotation3_transformed_coords$X
+annotation_df3$y <- annotation3_transformed_coords$Y
+
+
+
+annotation_df4 <- data.frame(
+  label = "American Mile",   
+  x = -78,                
+  y = 22.5,                 
+  family = "Snell Roundhand"     
+)
+annotation_sf4 <- st_as_sf(annotation_df4, coords = c("x", "y"), crs = 4326)  
+
+annotation4_transformed <- st_transform(annotation_sf4, crs = 5070)
+
+annotation4_transformed_coords <- as.data.frame(st_coordinates(annotation4_transformed))
+annotation_df4$x <- annotation4_transformed_coords$X
+annotation_df4$y <- annotation4_transformed_coords$Y
+
+
+annotation_df5 <- data.frame(
+  label = "Key",   
+  x = -91.2,                
+  y = 26.6,                 
+  family = "Apple Chancery"     
+)
+annotation_sf5 <- st_as_sf(annotation_df5, coords = c("x", "y"), crs = 4326)  
+
+annotation5_transformed <- st_transform(annotation_sf5, crs = 5070)
+
+annotation5_transformed_coords <- as.data.frame(st_coordinates(annotation5_transformed))
+annotation_df5$x <- annotation5_transformed_coords$X
+annotation_df5$y <- annotation5_transformed_coords$Y
+
+
+
+
+#Pre 
+annotation_df6 <- data.frame(
+  label = "Pre 1800",   
+  x = -90.1,                
+  y = 25.4,                 
+  family = "Apple Chancery"     
+)
+annotation_sf6 <- st_as_sf(annotation_df6, coords = c("x", "y"), crs = 4326)  
+
+annotation6_transformed <- st_transform(annotation_sf6, crs = 5070)
+
+annotation6_transformed_coords <- as.data.frame(st_coordinates(annotation6_transformed))
+annotation_df6$x <- annotation6_transformed_coords$X
+annotation_df6$y <- annotation6_transformed_coords$Y
+
+
+#1800
+annotation_df7 <- data.frame(
+  label = "1800 - 1825",   
+  x = -89.85,                
+  y = 25,                 
+  family = "Apple Chancery"     
+)
+annotation_sf7 <- st_as_sf(annotation_df7, coords = c("x", "y"), crs = 4326)  
+
+annotation7_transformed <- st_transform(annotation_sf7, crs = 5070)
+
+annotation7_transformed_coords <- as.data.frame(st_coordinates(annotation7_transformed))
+annotation_df7$x <- annotation7_transformed_coords$X
+annotation_df7$y <- annotation7_transformed_coords$Y
+
+
+#1825
+annotation_df8 <- data.frame(
+  label = "1825 - 1850",   
+  x = -89.9,                
+  y = 24.5,                 
+  family = "Apple Chancery"     
+)
+annotation_sf8 <- st_as_sf(annotation_df8, coords = c("x", "y"), crs = 4326)  
+
+annotation8_transformed <- st_transform(annotation_sf8, crs = 5070)
+
+annotation8_transformed_coords <- as.data.frame(st_coordinates(annotation8_transformed))
+annotation_df8$x <- annotation8_transformed_coords$X
+annotation_df8$y <- annotation8_transformed_coords$Y
+
+
+#1850
+annotation_df9 <- data.frame(
+  label = "1850 - 1875",   
+  x = -89.95,                
+  y = 24,                 
+  family = "Apple Chancery"     
+)
+annotation_sf9 <- st_as_sf(annotation_df9, coords = c("x", "y"), crs = 4326)  
+
+annotation9_transformed <- st_transform(annotation_sf9, crs = 5070)
+
+annotation9_transformed_coords <- as.data.frame(st_coordinates(annotation9_transformed))
+annotation_df9$x <- annotation9_transformed_coords$X
+annotation_df9$y <- annotation9_transformed_coords$Y
+
+
+#1875
+annotation_df10 <- data.frame(
+  label = "1875",   
+  x = -90.6,                
+  y = 23.5,                 
+  family = "Apple Chancery"     
+)
+annotation_sf10 <- st_as_sf(annotation_df10, coords = c("x", "y"), crs = 4326)  
+
+annotation10_transformed <- st_transform(annotation_sf10, crs = 5070)
+
+annotation10_transformed_coords <- as.data.frame(st_coordinates(annotation10_transformed))
+annotation_df10$x <- annotation10_transformed_coords$X
+annotation_df10$y <- annotation10_transformed_coords$Y
+
+
+
+#Credits
+annotation_df11 <- data.frame(
+  label = " #30DayMappingChallenge \nDay 07 - Vintage Style \nEmma Witanowski 2024",   
+  x = -117.2,                
+  y = 21.75,                 
+  family = "Apple Chancery"     
+)
+annotation_sf11 <- st_as_sf(annotation_df11, coords = c("x", "y"), crs = 4326)  
+
+annotation11_transformed <- st_transform(annotation_sf11, crs = 5070)
+
+annotation11_transformed_coords <- as.data.frame(st_coordinates(annotation11_transformed))
+annotation_df11$x <- annotation11_transformed_coords$X
+annotation_df11$y <- annotation11_transformed_coords$Y
+
+###################### Range
+
+#Bison Range
+range <- st_read("bison/bison_shp.shp") %>% st_transform(crs = raster_crs)
+range <- st_transform(range, crs = 5070)
+us2_merged_sf <- st_transform(us2_merged_sf, crs = 5070)
+#range_clipped <- st_intersection(range, us2_merged_sf)
+range <- range %>%
+  mutate(
+    year_color = case_when(
+      Years == "pre-1800" ~ "#C8DF9B",
+      Years == "1800-1825" ~ "#A2C45D",
+      Years == "1825-1850" ~ "#87A846",
+      Years == "1850-1875" ~ "#60723A",
+      Years == "1875" ~ "#3D462A",
+      TRUE ~ "transparent"))
+range <- st_make_valid(range)
+
+###################### More Boundaries
+
+#DOWNLOAD: https://hub.arcgis.com/datasets/esri::world-countries-generalized/explore?location=22.296120%2C-85.291930%2C4.71
+
+#N + S America Boundaries
+all_boundaries <- st_read("PoliticalBoundaries_Shapefile/NA_PoliticalDivisions/data/bound_p/boundaries_p_2021_v3.shp")
+all_boundaries <- st_transform(all_boundaries, crs = 'EPSG:5070')
+
+###################### Mapping
+
+#Plot the map
+ggplot() +
+  background_image(vintage_map_transparent) +
+  background_image(vintage_grid_transparent) +
+  geom_sf(data = all_countries, fill = "#eadbc0", color = "transparent", alpha = 0.8) +
+  geom_sf(data = range, fill = c("#60723A", "#C8DF9B", "#A2C45D", "#87A846", "#3D462A"), alpha = 0.85, color = "transparent") + 
+  geom_sf(data = us_boundary, fill = "transparent", col = alpha("#b78730", 0.4), lwd = 1.4) +
+  geom_sf(data = us_boundary, fill = "transparent", col = alpha("#3a2317", 0.4), lwd = .9) +
+  geom_raster(data = FULL_raster_df, aes(x = x, y = y, fill = SR_50M), alpha = 0.5) +
+  scale_fill_gradient(
+    low = "#3a2317",   
+    high = "#eadbc0",  
+    na.value = "transparent", 
+    name = "Elevation"
+  ) +
+  geom_sf(data=cont_us, fill = "transparent", col = alpha("#7f663b",0.3), lwd = 0.15)+
+  annotation_custom(
+    grob = rectGrob(
+      gp = gpar(
+        col = "#ab9676",  
+        fill = NA,      
+        lwd =20,
+        lty = "solid"
+      )
+    ),
+    xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf
+  ) +
+   annotation_custom(
+    grob = rectGrob(
+      gp = gpar(
+        col = "#5e4b2f", 
+        fill = NA,      
+        lwd = 15,
+        linetype = "dashed"
+      )
+    ),
+    xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf
+  ) +
+  annotation_custom(
+    grob = rectGrob(
+      gp = gpar(
+        col = "#5e4b2f",  
+        fill = NA,      
+        lwd =20,
+        lty = "dashed"
+      )
+    ),
+    xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf
+  ) +
+   annotation_custom(
+    grob = rectGrob(
+      gp = gpar(
+        col = "#d0c0a9", 
+        fill = NA,      
+        lwd = 10,
+        lty = "solid"
+      )
+    ),
+    xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf
+  ) +
+ annotation_north_arrow(
+  location = "tl",
+  which_north = "true",  
+  pad_x = unit(0.2, "in"), 
+  pad_y = unit(0.2, "in"), 
+  height = unit(1, "cm"), 
+  width = unit(1, "cm"),  
+  style = north_arrow_nautical(
+    fill = c("#3a2317", "#ab9676"),  
+    line_col = "#3a2317",
+    text_family = "Snell Roundhand"
+  )) +
+  annotation_scale(
+    location = "br",  
+    label = "American Mile",
+    unit_category = "imperial",
+    width_hint = 0.18, 
+    height = unit(0.12, "cm"),
+    text_cex = 0.6,
+    text_family = "Apple Chancery",
+    bar_cols = c("#3a2317", "transparent"),
+    box.color = "red",
+    alpha = 0.6, 
+    pad_x = unit(2, "cm"),  
+    pad_y = unit(0.9, "cm"),
+    text_pad = unit(-4.8, "cm")) +
+  geom_image(
+    data = bison_df2,
+    aes(x = x, y = y, image = image),  
+    size = 0.07  
+  ) +
+   geom_image(
+    data = bison_df22,
+    aes(x = x, y = y, image = image), 
+    size = 0.075  
+  ) +
+  geom_image(
+    data = bison_df23,
+    aes(x = x, y = y, image = image),  
+    size = 0.06  
+  ) +
+  geom_image(
+    data = bison_df3,
+    aes(x = x, y = y, image = image),  
+    size = 0.09  
+  ) +
+   geom_image(
+    data = bison_df4,
+    aes(x = x, y = y, image = image),  
+    size = 0.1  
+  ) +
+  geom_image(
+    data = bison_df5,
+    aes(x = x, y = y, image = image),  
+    size = 0.1  
+  ) +
+  geom_image(
+    data = bison_df31,
+    aes(x = x, y = y, image = image),  
+    size = 0.08  
+  ) +
+  geom_image(
+    data = bison_df221,
+    aes(x = x, y = y, image = image), 
+    size = 0.08  
+  ) +
+  geom_image(
+    data = legend1,
+    aes(x = x, y = y, image = image), 
+    size = 0.03  
+  ) +
+  geom_image(
+    data = legend2,
+    aes(x = x, y = y, image = image),  
+    size = 0.03 
+  ) +
+  geom_image(
+    data = bb_img,
+    aes(x = x, y = y, image = image),  
+    size = .37,
+    alpha = 0.7
+  ) +
+  geom_text(
+    data = annotation_df1,      
+    aes(x = x, y = y, label = label, family = family),
+    hjust = 0.5,                
+    vjust = 0.5,
+    color = "#3a2317",
+    size = 9,
+    alpha = 0.9,
+    fontface = "bold" 
+  ) +
+  geom_text(
+    data = annotation_df2,      
+    aes(x = x, y = y, label = label, family = family),
+    hjust = 0.5,                
+    vjust = 0.5,
+    color = "#3a2317",
+    size = 3.5,
+    alpha = 0.9
+  ) +
+  geom_text(
+    data = annotation_df3,       
+    aes(x = x, y = y, label = label, family = family),
+    hjust = 0.5,                
+    vjust = 0.5,
+    color = "#3a2317",
+    size = 4,
+    alpha = 0.9,
+    fontface = "bold"
+  ) +
+  geom_text(
+    data = annotation_df4,      
+    aes(x = x, y = y, label = label, family = family),
+    hjust = 0.5,                
+    vjust = 0.5,
+    color = "#3a2317",
+    size = 3,
+    alpha = 0.9,
+    fontface = "bold"
+  ) +
+   geom_text(
+    data = annotation_df5,      
+    aes(x = x, y = y, label = label, family = family),
+    hjust = 0.5,                
+    vjust = 0.5,
+    color = "#3a2317",
+    size = 4,
+    alpha = 0.9,
+    fontface = "bold"
+  ) +
+  geom_text(
+    data = annotation_df6,       
+    aes(x = x, y = y, label = label, family = family),
+    hjust = 0.5,                
+    vjust = 0.5,
+    color = "#3a2317",
+    size = 2.2,
+    alpha = 0.9
+  ) +
+  geom_text(
+    data = annotation_df7,       
+    aes(x = x, y = y, label = label, family = family),
+    hjust = 0.5,                
+    vjust = 0.5,
+    color = "#3a2317",
+    size = 2.2,
+    alpha = 0.9
+  ) +
+  geom_text(
+    data = annotation_df8,       
+    aes(x = x, y = y, label = label, family = family),
+    hjust = 0.5,                
+    vjust = 0.5,
+    color = "#3a2317",
+    size = 2.2,
+    alpha = 0.9
+  ) +
+  geom_text(
+    data = annotation_df9,       
+    aes(x = x, y = y, label = label, family = family),
+    hjust = 0.5,                
+    vjust = 0.5,
+    color = "#3a2317",
+    size = 2.2,
+    alpha = 0.9
+  ) +
+  geom_text(
+    data = annotation_df10,       
+    aes(x = x, y = y, label = label, family = family),
+    hjust = 0.5,                
+    vjust = 0.5,
+    color = "#3a2317",
+    size = 2.2,
+    alpha = 0.9
+  ) +
+  geom_text(
+    data = annotation_df11,       
+    aes(x = x, y = y, label = label, family = family),
+    hjust = 0.5,                
+    vjust = 0.5,
+    color = "#3a2317",
+    size = 2.2,
+    alpha = 0.9
+  ) +
+  coord_sf(
+    xlim = c(-2400000, 2400000),
+    ylim = c(0, 3280000),       
+    crs = 5070                   
+  ) +
+  theme_void()+
+  theme(  
+    legend.position = "none"
+  ) 
+
+```
+
