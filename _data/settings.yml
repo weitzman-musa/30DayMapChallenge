@@ -10,7 +10,7 @@ day_categories:
     '5': A journey
     '6': Raster
     '7': Vintage style
-    '8': Humanitarian Data Exchange (HDX)
+    '8': HDX
     '9': AI only
     '10': Pen & paper
     '11': Arctic
@@ -19,14 +19,14 @@ day_categories:
     '14': A world map
     '15': My data
     '16': Choropleth
-    '17': Collaborative map
+    '17': Collaborative
     '18': 3D
     '19': Typography
-    '20': OpenStreetMap
+    '20': OSM
     '21': Conflict
-    '22': 2 colours
+    '22': 2 Colors
     '23': Memory
-    '24': Only circular shapes
+    '24': Circular shapes
     '25': Heat
     '26': Map projections
     '27': Micromapping
