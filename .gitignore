@@ -1,5 +1,5 @@
 _site/
-.DS_Store
+**/.DS_Store
 
 assets/scaled_thumbnails/
 .Rproj.user
