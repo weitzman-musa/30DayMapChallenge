@@ -12,4 +12,4 @@ Finding and mapping data regarding where Indigenous Americans lived proved to be
 
 Check out this [cool website](https://native-land.ca/) that visualizes indigenous peoples around the world.
 
-![Screenshot of map](assets/thumbnails/2024/28-BluePlanet.png)
+![Screenshot of map](assets/thumbnails/2024/28-Aki-BluePlanet.png)
