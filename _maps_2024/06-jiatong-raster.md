@@ -3,7 +3,7 @@
 day: 6
 creator: Jiatong Su
 title: Day 6 | Raster
-thumbnail: /assets/thumbnails/2024/6_jiatong_raster.png
+thumbnail: /assets/thumbnails/2024/06-jiatong-raster.png
 source: https://github.com/sujiatong/30DayMap-Jiatong/blob/main/day-6-raster/day-6.Rmd
 
 ---
