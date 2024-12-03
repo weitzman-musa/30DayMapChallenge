@@ -1,5 +1,5 @@
 ---
-day: 20
+day: 15
 creator: Emma Witanowski
 title: Gila Monster Locations
 thumbnail: /assets/thumbnails/2024/15-Witanowski-My%20Data.png
