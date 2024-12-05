@@ -15,3 +15,5 @@ It ranges from -1 to 1, where:
   - Values close to 1 indicate healthy, dense vegetation.
   - Values near 0 represent bare soil.
   - Negative values indicate water or non-vegetated areas.
+
+![NDVI Plot Image](assets/thumbnails/2024/06-jiatong-raster.png)

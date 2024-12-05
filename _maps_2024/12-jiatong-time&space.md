@@ -13,3 +13,4 @@ This map visualizes the territorial changes of the Qing Dynasty, comparing two s
 
 - 1911 (3rd year of Xuantong - 宣統三年): By this time—the final year of the dynasty—foreign powers had seized large portions of land, and the empire’s borders were significantly reduced.
 
+![Territorial changes map](assets/thumbnails/2024/12-jiatong-time-space.png)
