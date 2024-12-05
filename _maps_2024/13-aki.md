@@ -7,3 +7,5 @@ source: https://github.com/disandroa/30DayMappingChallenge2024/blob/main/scripts
 ---
 
 I hadn't given tmap animations a try yet, so here's my first shot at it!
+
+![Animated map of Asian population in Philadelphia](assets/thumbnails/2024/13-Aki-NewTool.gif)
