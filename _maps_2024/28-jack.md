@@ -7,3 +7,5 @@ source: https://github.com/jijinjc/30DayMappingChallenge2024/blob/main/BluePlane
 ---
 
 Drake Passage, an area of water between South America and the Antarctic Peninsula. Here, in this map, you can see the tip of the Antarctic Peninsula and South America and with the bathymetry, the map provides depth (no pun intended)
+
+![Map of the Drake Passage](assets/thumbnails/2024/28-Jack-BluePlanet.jpg)
