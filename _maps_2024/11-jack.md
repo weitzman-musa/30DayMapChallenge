@@ -2,7 +2,7 @@
 day: 11
 creator: Ji Jin (Jack) Chen
 title: Arctic
-thumbnail: /assets/thumbnails/2024/11-Jack-Arctic.png
+thumbnail: /assets/thumbnails/2024/11-Jack-Arctic.jpg
 source: https://github.com/jijinjc/30DayMappingChallenge2024/blob/main/Arctic-11.Rmd
 ---
 
