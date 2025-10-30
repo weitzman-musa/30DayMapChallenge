@@ -21,9 +21,14 @@ collections:
   maps_2024:
     output: true
     permalink: /:collection-:title
+  maps_2025:
+    output: true
+    permalink: /:collection-:title
 
 defaults:
   - scope: { type: "maps_2023", path: "" }
     values: { layout: "map" }
   - scope: { type: "maps_2024", path: "" }
+    values: { layout: "map" }
+  - scope: { type: "maps_2025", path: "" }
     values: { layout: "map" }

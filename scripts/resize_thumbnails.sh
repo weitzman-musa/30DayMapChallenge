@@ -40,7 +40,9 @@ find assets/thumbnails -type f -name '*.jpg' -o -name '*.jpeg' -o -name '*.png' 
     fi
 
     # If the file is a GIF, create a temporary coalesced file at the original
-    # size first.
+    # size first. This will Fully define the look of each frame and avoid issues
+    # when resizing animated GIFs.
+    # See https://imagemagick.org/script/command-line-options.php#coalesce
     if [[ $file == *.gif ]]; then
         coalesced_file=$(mktemp)
         echo "Coalescing $file to $coalesced_file"

@@ -6,6 +6,7 @@ assets/scaled_thumbnails/
 .RData
 .Rhistory
 *.Rproj
+.bundle/
 
 rosm.cache/
 sources/

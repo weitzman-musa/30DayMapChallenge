@@ -2,6 +2,37 @@ logo: '/assets/img/musa-logo.png'
 description: The collaborative 30-Days of Maps Challenge entries from the MUSA program
 author: Masters of Urban Spatial Analytics
 day_categories:
+  '2025':
+    '1': Points
+    '2': Lines
+    '3': Polygons
+    '4': My Data
+    '5': Earth
+    '6': Dimensions
+    '7': Accessibility
+    '8': Urban
+    '9': Analog
+    '10': Air
+    '11': Minimal map
+    '12': Map from 2125
+    '13': 10 minute map
+    '14': OpenStreetMap
+    '15': Fire
+    '16': Cell
+    '17': A new tool
+    '18': Out of this world
+    '19': Projections
+    '20': Water
+    '21': Icons
+    '22': Natural Earth
+    '23': Process
+    '24': Places and their names
+    '25': Hexagons
+    '26': Transport
+    '27': Boundaries
+    '28': Black
+    '29': Raster
+    '30': Makeover
   '2024':
     '1': Points
     '2': Lines
