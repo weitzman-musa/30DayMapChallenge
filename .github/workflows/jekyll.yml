@@ -43,7 +43,7 @@ jobs:
           key: ${{ runner.os }}-thumbnails-${{ env.cache-version }}-${{ hashFiles('assets/thumbnails/**/*') }}
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.197.0
+        uses: ruby/setup-ruby@v1.267.0
         with:
           ruby-version: '3.2.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
