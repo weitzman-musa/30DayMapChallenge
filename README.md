@@ -23,15 +23,15 @@ Find some good tips from previous participant [Wanmei Liang](https://www.linkedi
 
 2.  **Create a "thumbnail" image from your map**
 
-    Your thumbnail should go in the **[assets/thumbnails](assets/thumbnails/)** folder for the current year, and should be a .png, .jpg, .gif, or .webp file. It should include the 2-digit day of your map, and your name in the title. For example, if I were submitting a map for November 2 in 2024, I might create a file named **assets/thumbnails/2024/02-mjumbe-poe.gif**.
+    Your thumbnail should go in the **[assets/thumbnails](assets/thumbnails/)** folder for the current year, and should be a .png, .jpg, .gif, or .webp file. It should include the 2-digit day of your map, and your name in the title. For example, if I were submitting a map for November 2 in 2025, I might create a file named **assets/thumbnails/2025/02-mjumbe-poe.gif**.
 
     > Note that if your image is larger than 300x300, it will be scaled down, and if it is not a square, then only the middle part of the image will be visible (i.e. if it's a tall image, the top and bottom will be cropped; if it's a wide image, the left and right will be cropped). I recommend creating an image around 600 pixels on each side.
 
     This image will be shown in a gallery of all the maps we create for 30 Day Map Challenge. It's going to be square, and about 300 pixels on each side. Your map doesn't have to be a square -- it's just this image that going to be shown in the gallery that will be square. SO, if there's some particular part of your map that you want to showcase in the gallery, make sure to screenshot that part and use it as the thumbnail.
 
-3.  **Create a new entry in the [_maps_2024](_maps_2024/) folder**
+3.  **Create a new entry in the [_maps_2025](_maps_2025/) folder**
 
-    Your file name should include the 2-digit day that your map is for, and your name. For example, if I were submitting a map for November 7, I would create a file named **_maps_2024/07-mjumbe-poe.md**. Use the [_maps_2024/00-template.md](_maps_2024/00-template.md) as a template for your own entry -- i.e., copy that file and name it appropriately. **Be sure to make a copy of the template file, and not just rename the original**.
+    Your file name should include the 2-digit day that your map is for, and your name. For example, if I were submitting a map for November 7, I would create a file named **_maps_2025/07-mjumbe-poe.md**. Use the [_maps_2025/00-template.md](_maps_2025/00-template.md) as a template for your own entry -- i.e., copy that file and name it appropriately. **Be sure to make a copy of the template file, and not just rename the original**.
 
     In your Markdown, you should fill out all of the fields at the top of the file. Update the `thumbnail` value to point to your thumbnail image, and update the `source` value to point to the source code that you used to generate your map. Ideally this is another Github repository where you've uploaded your source.
 
@@ -45,6 +45,7 @@ Find some good tips from previous participant [Wanmei Liang](https://www.linkedi
 
 ## Daily Map Categories
 
+- [2025 Categories](CATEGORIES_2025.md)
 - [2024 Categories](CATEGORIES_2024.md)
 - [2023 Categories](CATEGORIES_2023.md)
 

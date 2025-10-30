@@ -7,3 +7,4 @@
 5. Copy the categories for the new year into [`_data/settings.yml`](_data/settings.yml)
 6. Add a new `<section>` to the top of [`index.html`](index.html)
 7. Run `scripts/resize_thumbnails.sh` and `bundle exec jekyll serve` to check the site (you may have to run `bundle install` first)
+8. Update the year in the README.md participation instructions, and add a new year in the **Daily Map Categories** section.
