@@ -10,7 +10,7 @@ source: hhttps://github.com/zyang91/30-day-map-challenge-2025/blob/main/scripts/
 
 The map also incorporates water features from OpendataPhilly as a semi-transparent blue overlay, providing geographic context and highlighting Philadelphia's relationship with its waterways.
 
-![](../assets/thumbnails/2025/03-zhanchao-polygon.png)
+![](/assets/thumbnails/2025/03-zhanchao-polygon.png)
 
 **Technical Implementation:**
 - **tidycensus** - R package for accessing U.S. Census Bureau data with built-in spatial features
