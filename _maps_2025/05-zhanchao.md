@@ -1,7 +1,7 @@
 ---
 day: 5
 creator: Zhanchao Yang
-title: My Spatial Footprint Across US
+title: Pennsylvania • Shaded Relief (USGS 3DEP)
 thumbnail: /assets/thumbnails/2025/05-zhanchao-earth.png
 source: https://github.com/zyang91/30-day-map-challenge-2025/blob/main/scripts/day5-earth.R
 ---
