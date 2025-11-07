@@ -8,7 +8,7 @@ source: https://github.com/zyang91/30-day-map-challenge-2025/blob/main/scripts/d
 
 **Day 5 (Earth)**: I created a shaded relief map of Pennsylvania using digital elevation data, which showcases the state's diverse topography from the Appalachian Mountains to the lower-lying regions. This visualization combines hypsometric tinting with advanced ray-tracing and ambient shading techniques through the `rayshader` package. It creates a three-dimensional appearance that emphasizes Pennsylvania's terrain and elevation changes.
 
-![](assets/thumbnails/2025/05-zhanchao-earth.png)
+![Day 5 Pennsylvania Shaded Relief Map](assets/thumbnails/2025/05-zhanchao-earth.png)
 
 **Technical Implementation:**
 - **elevatr** - R package for accessing elevation data from the USGS 3D Elevation Program (3DEP)
