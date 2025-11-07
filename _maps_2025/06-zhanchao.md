@@ -14,7 +14,7 @@ The visualization employs advanced ray-tracing techniques to render realistic li
 
 **Acknowledgement**:
 
-Special thanks for the tutorial made possible by **Niloy Biswas**: https://medium.com/@niloy.swe/how-to-create-a-3d-population-density-map-in-r-33dfaf7a71d7
+Special thanks for the [tutorial](https://medium.com/@niloy.swe/how-to-create-a-3d-population-density-map-in-r-33dfaf7a71d7) made possible by **Niloy Biswas**.
 
 
 **Technical Implementation:**
