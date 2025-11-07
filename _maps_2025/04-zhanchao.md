@@ -10,7 +10,7 @@ source: https://github.com/zyang91/30-day-map-challenge-2025/blob/main/scripts/d
 
 The map utilizes custom coordinate reference systems (CRS 5070 for the mainland and CRS 6633 for Hawaii) to ensure accurate spatial representation. It employs elegant typography with the Playfair Display font for a polished aesthetic. The data was manually created using [geojson.io](geojson.io).
 
-![](assets/thumbnails/2025/04-zhanchao-mydata.png)
+![Day 4 My Spatial Footprint Across US Map](assets/thumbnails/2025/04-zhanchao-mydata.png)
 
 **Technical Implementation:**
 - **sf (Simple Features)** - R package for handling spatial vector data and geometric operations
