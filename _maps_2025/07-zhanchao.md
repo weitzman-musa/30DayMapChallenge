@@ -3,14 +3,14 @@ day: 7
 creator: Zhanchao Yang
 title: Midday vs. Rush Hour Accessibility from Weitzman School of Design
 thumbnail: /assets/thumbnails/2025/07-zhanchao-accessibility.png
-source: https://github.com/zyang91/30-day-map-challenge-2025/blob/main/scripts/day7-accessbility.R
+source: https://github.com/zyang91/30-day-map-challenge-2025/blob/main/scripts/day7-accessibility.R
 ---
 
 **Day 7 (Accessibility)**: I built an interactive map that compares door-to-door travel times from the Weitzman School of Design (210 S 34th St, Philadelphia, PA 19104) at two moments in the day. Using isochrone analysis, it visualizes areas reachable by car within 5, 10, and 15 minutes at midday (12:00 PM) versus the evening peak (5:30 PM), revealing how congestion reshapes urban accessibility.
 
 Powered by Mapbox GL JS, the map presents a side-by-side view of the two scenarios. Color-coded isochrones—red (5 minutes), blue (10 minutes), and green (15 minutes)—make it clear how the accessible footprint contracts during rush hour, underscoring why time-of-day effects matter for urban planning and accessibility analysis.
 
-Explore the interactive map at [my website](https://zyang91.github.io/30-day-map-challenge-2025/day7-accessbility.html) hosted by GitHub
+Explore the interactive map at [my website](https://zyang91.github.io/30-day-map-challenge-2025/day7-accessibility.html) hosted by GitHub
 
 ![Day 7 Interactive Map Screenshot](assets/thumbnails/2025/07-zhanchao-accessibility.png)
 
