@@ -10,7 +10,7 @@ source: https://github.com/zyang91/30-day-map-challenge-2025/blob/main/scripts/d
 
 The map focuses on different hierarchies of streets—from major motorways and trunk roads to residential streets, pedestrian paths, and footways—each contributing to the intricate pattern that emerges. Water bodies have been carefully removed from the land area to highlight Seattle's distinctive geography, bounded by Puget Sound and various lakes.
 
-![Day 8 Seattke Network Map](assets/thumbnails/2025/08-zhanchao-urban.png)
+![Day 8 Seattle Network Map](assets/thumbnails/2025/08-zhanchao-urban.png)
 
 **Acknowledgement:**
 
