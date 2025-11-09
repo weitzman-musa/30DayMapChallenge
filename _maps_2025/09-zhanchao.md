@@ -2,8 +2,8 @@
 day: 9
 creator: Zhanchao Yang
 title: Binghamton University Hand-drawing Map
-thumbnail: /assets/thumbnails/2025/09-zhanchao-analog
-source: https://github.com/zyang91/30-day-map-challenge-2025/blob/main/scripts/day8-urban.R
+thumbnail: /assets/thumbnails/2025/09-zhanchao-analog.png
+source: ""
 ---
 
 **Day 9 (Analog)**: For this challenge, I created a hand-drawn map of the Binghamton University campus, where I finished my undergraduate degree. This analog map was created using traditional pen-and-paper methods. The hand-drawn approach allows for a more artistic and personal interpretation of the campus layout.
