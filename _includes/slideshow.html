@@ -1,0 +1,217 @@
+{% assign grouped_maps = include.maps | group_by:"day" %}
+{% assign year = include.year %}
+
+<script src="{{ "assets/js/qrcode.js" | relative_url }}"></script>
+
+{%- for map_group in grouped_maps -%}
+  {%- assign day = map_group.name -%}
+
+  {%- if day != '0' -%}
+    <section class="day-section">
+      <header><h2 class="day-label">Day {{ day }} - {{ site.data.settings.day_categories[year][day] }}</h2></header>
+
+      <div class="maps-container">
+      {%- for map in map_group.items -%}
+        {%- assign label = map.title -%}
+
+        <article class="map-article">
+          <div class="map-image" style="background-image: url('{{ map.thumbnail | relative_url }}');">
+            <img class="thumbnail" src="{{ map.thumbnail | relative_url }}"
+              alt="{{ map.title }} by {{ map.creator }}"
+              title="{{ map.title }} by {{ map.creator }}">
+          </div>
+          <header>
+            <div class="map-info">
+              <span class="map-title">{{ map.title }}</span>
+              <span class="map-creator">{{ map.creator }}</span>
+            </div>
+            <div class="map-qr" data-qr-text="{{ site.url }}{{ map.url }}"></div>
+          </header>
+        </article>
+      {%- endfor -%}
+      </div>
+
+    </section>
+  {%- endif -%}
+{%- endfor -%}
+
+<style>
+  :root {
+    --qr-size: 8rem;
+  }
+
+  body {
+    padding-top: 0;
+  }
+
+  .page-title {
+    position: relative;
+    z-index: 100;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .day-section {
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .day-label {
+    margin: 0;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+
+  .day-section.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .maps-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .map-article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+  }
+
+  .map-article.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .map-article header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    overflow: visible;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .map-info {
+    flex-grow: 1;
+    font-size: 1.5rem;
+  }
+
+  .map-title {
+    display: block;
+  }
+
+  .map-creator {
+    display: block;
+  }
+  .map-creator::before {
+    content: "by ";
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  .map-qr {
+    grid-area: qr;
+    padding-right: 1rem;
+    width: var(--qr-size);
+    height: var(--qr-size);
+  }
+
+  .map-qr img {
+    width: 100%;
+    height: auto;
+  }
+
+  .map-image {
+    width: calc(100% - 2rem);
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .map-image img {
+    width: 0;
+    height: 0;
+  }
+</style>
+
+<script type="module">
+  const mapArticles = document.querySelectorAll('.map-article');
+  const qrElements = document.querySelectorAll('.map-qr');
+  let currentMapIndex = -1;
+  let currentMapArticle = null;
+  let currentDaySection = null;
+
+  function initQRCodes() {
+    qrElements.forEach((el) => {
+      const qrText = el.getAttribute('data-qr-text');
+      const qrCode = new QRCode(el, {
+        text: qrText,
+        // Create a high-res QR code, and scale down if necessary with CSS
+        width: 1000,
+        height: 1000,
+      });
+    });
+  }
+
+  function advanceSlideshow(direction = 1) {
+    const newMapIndex = (currentMapIndex + direction + mapArticles.length) % mapArticles.length;
+    const newMapArticle = mapArticles[newMapIndex];
+    const newDaySection = newMapArticle.closest('.day-section');
+
+    currentMapArticle?.classList.remove('active');
+    if (currentDaySection !== newDaySection) {
+      currentDaySection?.classList.remove('active');
+    }
+
+    newDaySection.classList.add('active');
+    newMapArticle.classList.add('active');
+
+    currentMapIndex = newMapIndex;
+    currentMapArticle = newMapArticle;
+    currentDaySection = newDaySection;
+  }
+
+  initQRCodes();
+  setInterval(advanceSlideshow, 8000);
+  advanceSlideshow();
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') {
+      advanceSlideshow(1);
+    } else if (event.key === 'ArrowLeft') {
+      advanceSlideshow(-1);
+    }
+  });
+</script>

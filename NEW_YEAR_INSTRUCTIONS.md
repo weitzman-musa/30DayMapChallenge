@@ -8,3 +8,8 @@
 6. Add a new `<section>` to the top of [`index.html`](index.html)
 7. Run `scripts/resize_thumbnails.sh` and `bundle exec jekyll serve` to check the site (you may have to run `bundle install` first)
 8. Update the year in the README.md participation instructions, and add a new year in the **Daily Map Categories** section.
+
+## If Showing a Slideshow at GIS Day...
+
+1. Make a copy of one of the existing `slideshow-<year>.html` files
+2. Update the year in the copied file name and in the front matter
