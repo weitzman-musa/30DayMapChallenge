@@ -10,7 +10,7 @@ source: "https://app.xmind.com/share/DnP1dXlU?xid=sFLJOd0S"
 
 ![Day 18 AI Mental Map](assets/thumbnails/2025/18-zhanchao-Outofthisworld.png)
 
-Explore the interactive mental map: https://app.xmind.com/share/DnP1dXlU?xid=sFLJOd0S
+Explore the interactive mental map: [https://app.xmind.com/share/DnP1dXlU?xid=sFLJOd0S](https://app.xmind.com/share/DnP1dXlU?xid=sFLJOd0S)
 
 **Technical Implementation:**
 - **Xmind** - Mind mapping and brainstorming software for creating hierarchical visualizations of ideas and concepts
