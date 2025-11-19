@@ -25,7 +25,7 @@
               <span class="map-title">{{ map.title }}</span>
               <span class="map-creator">{{ map.creator }}</span>
             </div>
-            <div class="map-qr" data-qr-text="{{ site.url }}{{ map.url }}"></div>
+            <div class="map-qr" data-qr-text="{{ map.url | absolute_url }}"></div>
           </header>
         </article>
       {%- endfor -%}
