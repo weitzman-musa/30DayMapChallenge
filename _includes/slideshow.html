@@ -172,6 +172,7 @@
   let currentMapIndex = -1;
   let currentMapArticle = null;
   let currentDaySection = null;
+  let reloadOnNextLoop = false;
 
   function initQRCodes() {
     qrElements.forEach((el) => {
@@ -204,6 +205,12 @@
     const newMapArticle = mapArticles[newMapIndex];
     const newDaySection = newMapArticle.closest('.day-section');
 
+    // Load a fresh slideshow every so often to pick up any changes
+    if (newMapIndex === 0 && reloadOnNextLoop) {
+      window.location.reload();
+      return;
+    }
+
     currentMapArticle?.classList.remove('active');
     if (currentDaySection !== newDaySection) {
       currentDaySection?.classList.remove('active');
@@ -228,4 +235,8 @@
       advanceSlideshow(-1);
     }
   });
+
+  setTimeout(() => {
+    reloadOnNextLoop = true;
+  }, 30 * 60 * 1000); // Flag to reload after 30 minutes
 </script>
