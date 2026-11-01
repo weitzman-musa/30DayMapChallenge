@@ -2,6 +2,37 @@ logo: '/assets/img/musa-logo.png'
 description: The collaborative 30-Days of Maps Challenge entries from the MUSA program
 author: Masters of Urban Spatial Analytics
 day_categories:
+  '2026':
+    '1': 'Points'
+    '2': 'Lines'
+    '3': 'Polygons'
+    '4': 'Clusters'
+    '5': 'Senses: Sight'
+    '6': 'Vintage'
+    '7': '10 minute map'
+    '8': 'Utopia'
+    '9': 'Urban-rural'
+    '10': 'Prompting only'
+    '11': 'Senses: Sound'
+    '12': 'Power'
+    '13': 'Interactions'
+    '14': 'Borgesian map'
+    '15': 'Inside out'
+    '16': 'Collaborative map'
+    '17': 'Light & dark'
+    '18': 'NULL'
+    '19': 'Senses: Smell'
+    '20': 'Hexagons'
+    '21': 'OpenStreetMap'
+    '22': 'Projections'
+    '23': 'Senses: Taste'
+    '24': 'Network'
+    '25': 'Is this a map?'
+    '26': 'Water'
+    '27': 'New tool'
+    '28': 'Senses: Feeling'
+    '29': 'Raster'
+    '30': 'Pen & paper'
   '2025':
     '1': Points
     '2': Lines
