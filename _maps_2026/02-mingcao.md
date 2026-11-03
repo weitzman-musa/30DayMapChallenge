@@ -10,7 +10,7 @@ source: https://github.com/MingC404/30DayMapChallenge/tree/main/02
 
 **Waterfront Walks** uses colored lines to distinguish recorded surface materials, including asphalt, concrete, stone, and gravel, with steps shown separately. Water and toilets appear by default; optional layers show benches, curbs, and gates/barriers. Readers can switch between surface materials and recorded walking permission, then inspect original OpenStreetMap tags. Missing records do not establish real-world absence, and recorded tags do not guarantee current conditions or access.
 
-[View the interactive HTML file in the personal repository](https://github.com/MingC404/30DayMapChallenge/blob/main/02/outputs/waterfront_walks_preview.html) (download and open in a browser).
+[Explore the interactive map](https://mingc404.github.io/30DayMapChallenge/02/)
 
 **Technical implementation:**
 
