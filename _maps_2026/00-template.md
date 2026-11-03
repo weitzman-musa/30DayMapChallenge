@@ -1,0 +1,15 @@
+---
+day: 0
+creator: Your Name Here
+title: Give your map a title
+thumbnail: /assets/thumbnails/2026/00-template.png
+source: https://...  # Add a link to your source code here
+---
+
+<!-- Add your map description below. -->
+By default, your thumbnail will be displayed here. If that's good enough, cool, just delete all of this text below the front matter.
+
+But if you want to give any context for your map, feel free to all the **power** of [markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) to do so here. If you do, just make sure to also include some image(s) of your project, e.g.:
+
+<!-- Add the path to the image file of your map below, and a brief visual description between the square brackets. -->
+![Screenshot of interactive map](assets/thumbnails/2026/00-template.png)
