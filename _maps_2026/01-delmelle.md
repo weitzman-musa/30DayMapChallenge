@@ -2,7 +2,7 @@
 day: 1
 creator: Elizabeth Delmelle
 title: "Points: Rats!"
-thumbnail: /assets/thumbnails/2026/01-delmelle.png
+thumbnail: /assets/thumbnails/2026/01_delmelle.png
 source: https://github.com/ECDelmelle/30DayMapChallenge2026/blob/main/R/day01_points_rodents.R
 ---
 
