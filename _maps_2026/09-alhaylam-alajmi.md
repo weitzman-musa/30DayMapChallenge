@@ -1,4 +1,3 @@
-
 ---
 day: 9
 creator: Alhaylam Alajmi
