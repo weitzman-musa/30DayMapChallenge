@@ -10,3 +10,5 @@ assets/scaled_thumbnails/
 
 rosm.cache/
 sources/
+
+.DS_Store
