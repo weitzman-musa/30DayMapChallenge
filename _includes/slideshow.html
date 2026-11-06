@@ -174,6 +174,7 @@
   let currentMapArticle = null;
   let currentDaySection = null;
   let reloadOnNextLoop = false;
+  let slideshowTimerID = null;
 
   function initQRCodes() {
     qrElements.forEach((el) => {
@@ -202,6 +203,10 @@
   }
 
   function advanceSlideshow(direction = 1) {
+    // Clear any existing timer so that the slide gets its full time on screen,
+    // whether it was advanced manually or automatically
+    clearTimeout(slideshowTimerID);
+
     const newMapIndex = (currentMapIndex + direction + mapArticles.length) % mapArticles.length;
     const newMapArticle = mapArticles[newMapIndex];
     const newDaySection = newMapArticle.closest('.day-section');
@@ -223,10 +228,12 @@
     currentMapIndex = newMapIndex;
     currentMapArticle = newMapArticle;
     currentDaySection = newDaySection;
+
+    // Set a new timer for the current slide
+    slideshowTimerID = setTimeout(advanceSlideshow, 15000);
   }
 
   initQRCodes();
-  setInterval(advanceSlideshow, 15000);
   advanceSlideshow();
 
   document.addEventListener('keydown', (event) => {
