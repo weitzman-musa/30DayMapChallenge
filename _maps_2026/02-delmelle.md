@@ -1,5 +1,5 @@
 ---
-day: 2: lines 
+day: 2
 creator: Elizabeth Delmelle
 title: "Rails and HOLC"
 thumbnail: /assets/thumbnails/2026/02_delmelle.png
