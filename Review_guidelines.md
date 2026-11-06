@@ -65,6 +65,8 @@ scripts/resize_thumbnails.sh
 bundle exec jekyll serve
 ```
 
+> The `resize_thumbnails.sh` script uses ImageMagick to create smaller image files in `assets/scaled_thumbnails/202X/`. The home-page gallery loads its images from that folder. This command will get run by GitHub Actions upon deployment, so the `scaled_thumbnails` folder doesn't need to be committed to the repository.
+
 Open <http://localhost:4000> and check that:
 
 - The thumbnail shows under the right day.
