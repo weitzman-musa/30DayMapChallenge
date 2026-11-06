@@ -71,7 +71,3 @@ Open <http://localhost:4000> and check that:
 - Clicking it opens the map page with the images and Source link working.
 
 Press `Ctrl + C` to stop the server.
-
-### After merging
-
-Run `scripts/resize_thumbnails.sh` on `main` and commit the new files in `assets/scaled_thumbnails/2026/`. The home-page gallery loads its images from that folder.
