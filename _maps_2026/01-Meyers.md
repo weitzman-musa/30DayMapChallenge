@@ -3,7 +3,7 @@ day: 1
 creator: Sophia Meyers
 title: Healthy Food Accessibility In NYC
 thumbnail: /assets/thumbnails/2026/01-Meyers.png
-source: [https://...](https://github.com/SophiaMeyers/30-day-mapping/blob/main/Points.ipynb)  # Add a link to your source code here
+source: https://github.com/SophiaMeyers/30-day-mapping/blob/main/Points.ipynb
 ---
 
 <!-- Add your map description below. -->
