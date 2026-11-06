@@ -57,7 +57,7 @@ gem install bundler
 bundle install
 ```
 
-### Check a PR
+### Checkout a PR
 
 ```bash
 gh pr checkout <PR#>
