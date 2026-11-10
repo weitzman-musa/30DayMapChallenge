@@ -2,7 +2,7 @@
 day: 5
 creator: Ming Cao
 title: "Seeing New York from the Water"
-thumbnail: /assets/thumbnails/2026/05-mingcao.gif
+thumbnail: /assets/thumbnails/2026/05-mingcao-panorama.jpg
 source: https://github.com/MingC404/30DayMapChallenge/tree/main/05
 ---
 
