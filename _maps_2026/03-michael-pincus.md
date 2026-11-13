@@ -3,7 +3,6 @@ day: 3
 creator: Michael Pincus
 title: Which House districts have the highest density of data centers? 
 thumbnail: /assets/thumbnails/2026/03-michael-pincus.png
-source: https://github.com/michaeljpincus/points
 ---
 
 <!-- Add your map description below. -->
