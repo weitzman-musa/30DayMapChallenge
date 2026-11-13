@@ -1,7 +1,7 @@
 ---
 day: 6
 creator: Michael Pincus
-title: Vintage
+title: 1920s-themed map with modern borders
 thumbnail: /assets/thumbnails/2026/06-michael-pincus.png
 ---
 
