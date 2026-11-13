@@ -3,7 +3,6 @@ day: 4
 creator: Michael Pincus
 title: Where do historic landmarks cluster in Philadelphia? 
 thumbnail: /assets/thumbnails/2026/04-michael-pincus.png
-source: https://github.com/michaeljpincus/points
 ---
 
 <!-- Add your map description below. -->
