@@ -2,7 +2,7 @@
 day: 10
 creator: Michael Pincus
 title: Africa, according to AI
-thumbnail: /assets/thumbnails/2026/10-michael-pincus.png
+thumbnail: /assets/thumbnails/2026/10-michael-pinicus.png
 
 ---
 
