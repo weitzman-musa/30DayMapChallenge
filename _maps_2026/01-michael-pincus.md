@@ -9,5 +9,7 @@ source: https://github.com/michaeljpincus/points
 <!-- Add your map description below. -->
 Interactive map of restaurants in NYC by cuisine, using geocoded data from the NYC Department of Health.
 
+[Explore the interactive map](https://michaeljpincus.github.io/points/)
+
 <!-- Add the path to the image file of your map below, and a brief visual description between the square brackets. -->
 ![Map](https://raw.githubusercontent.com/michaeljpincus/30daymapping2026/refs/heads/main/01-michael-pincus.png) 
