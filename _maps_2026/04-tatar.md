@@ -14,4 +14,4 @@ This wasn't particularly successful as the results varied across scale. At the c
 
 The final result is not exactly what I had hoped for, but the process taught me a lot about querying spatial data, improving workflow efficiency, and planning around slow queries. Ideally, the maps should have had similar results with each other and mirrored this [paper's](https://www.researchgate.net/publication/344353348_Mechanization_Status_Promotional_Activities_and_Government_Strategies_of_Thailand_and_Vietnam_in_Comparison_to_Bangladesh#pf3) results.
 
-![Isan](assets/thumbnails/2026/isan_crop_suitability.png)
+![Isan](assets/thumbnails/2026/04-tatar-cluster.png)
