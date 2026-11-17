@@ -1,5 +1,5 @@
 ---
-day: 3: polygons 
+day: 3
 creator: Elizabeth Delmelle
 title: "Election Night USA"
 thumbnail: /assets/thumbnails/2026/03-delmelle.png
