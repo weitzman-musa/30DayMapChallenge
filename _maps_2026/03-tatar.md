@@ -10,7 +10,7 @@ Thailand is one of the world’s largest rice exporters, so naturally I love eat
 
 The Northeast experiences extreme drought during the off-season, which drastically reduces production. By contrast, the Central region benefits from consistent irrigation from the Chao Phraya River, allowing for more stable year-round output
 
-![District](https://data.humdata.org/dataset/cod-ab-tha) shapefiles
-![Agriculture](https://oae.go.th/home/article/475)
+[District](https://data.humdata.org/dataset/cod-ab-tha) shapefiles
+[Agriculture](https://oae.go.th/home/article/475)
 
 ![Screenshot of map](assets/thumbnails/2026/03-tatar-polygon.png)

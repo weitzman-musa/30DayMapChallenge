@@ -10,7 +10,7 @@ If you have been to Thailand, getting woken up by the one annoyingly loud bird i
 
 On a side note, I read a book in middle school with the same title as this bird's name, as the plot involves aliens making every single woman in the town pregnant.
 
-Access the interactive map here: ![map](https://canura8818.github.io/2026_MapChallenge/Day5/)
+Access the interactive map here: [map](https://canura8818.github.io/2026_MapChallenge/Day5/)
 
-![eBird - Cornell Labs](https://ebird.org/species/asikoe2/TH?continue)
+[eBird - Cornell Labs](https://ebird.org/species/asikoe2/TH?continue)
 ![Screenshot of interactive map](assets/thumbnails/2026/01-tatar-point.png)

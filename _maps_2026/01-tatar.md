@@ -10,5 +10,5 @@ For this year's challenge, I would like to create maps about Thailand! For day 1
 
 Using Google Earth to obtain accurate coordinates, I created a geojson file that contains the name, area, image, and coordinate of the largest malls in Bangkok. New malls are always being built and there are many smaller ones, so this dataset will be subject to change. I hope to use this dataset for future analysis on urban growth surrounding malls. Images were found across the internet.  
 
-![Try the map out here.](https://canura8818.github.io/2026_MapChallenge/Day1/)
+[Try the map out here.](https://canura8818.github.io/2026_MapChallenge/Day1/)
 ![Screenshot of interactive map](assets/thumbnails/2026/01-tatar-point.png)
