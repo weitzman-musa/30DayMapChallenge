@@ -44,11 +44,17 @@
     padding-top: 0;
   }
 
+  header {
+    margin-top: -5rem;
+    overflow: unset;
+  }
+
   .page-title {
-    position: relative;
-    z-index: 100;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    position: fixed;
+    transform: translateX(-50%) rotate(-90deg);
+    z-index: 100000;
+    left: 1.5rem;
+    top: 50%;
     font-size: 2rem;
     text-align: center;
   }
@@ -84,8 +90,9 @@
 
   .maps-container {
     position: relative;
-    width: 100%;
+    width: calc(100% - 5rem);
     height: 100%;
+    margin-top: -1rem;
   }
 
   .map-article {
