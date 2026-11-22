@@ -2,7 +2,7 @@
 day: 19
 creator: Ming Cao
 title: "Where Smells Wander"
-thumbnail: /assets/thumbnails/2026/19-mingcao.gif
+thumbnail: /assets/thumbnails/2026/19-mingcao.png
 source: https://github.com/MingC404/30DayMapChallenge/tree/main/19
 ---
 
